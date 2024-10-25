@@ -32,7 +32,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: black;
 }
 
 body > img {
@@ -281,6 +280,11 @@ footer p {
     color: white; /* Optional: button text color */
 }
 
+body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black; /* Pitch black background */
+        }
 
         #rainCanvas {
             position: absolute;
