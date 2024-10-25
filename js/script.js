@@ -17,23 +17,14 @@ document.addEventListener('keydown', (e) => {
   if (e.key === pattern[current]) {
     current++;
     if (current === pattern.length) {
-			clocks.classList.add("playing");
-			clocks.play();
-			clocks.addEventListener("ended", () => {
-				// clocks.classList.remove("playing");
-				clocks.pause();
-				clocks.classList.remove("playing");
-				clocks.classList.add("ending");
-				setTimeout(() => {
-					clocks.classList.remove("ending");
-				}, 500);
-			});
+      // Redirect to secret login page
+      window.location.href = window.location.href.split('#')[0] + '#login'; // Appends #login to the current URL
       current = 0;
     }
   } else {
     current = 0;
   }
-})
+});
 
 const canvas = document.getElementById("bg");
 const app = new PIXI.Application({
@@ -64,7 +55,6 @@ const stars = Array.from({ length: starNum }, () => {
 document.getElementById("bg").classList.add("show");
 
 function mod(n, m) {
-	// frick u js!!
 	return ((n % m) + m) % m;
 }
 
