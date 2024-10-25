@@ -1,7 +1,6 @@
 // Check if user is already logged in
 if (sessionStorage.getItem("loggedIn")) {
-    const adminPage = sessionStorage.getItem("adminPage");
-    window.location.href = `${adminPage}.html`; // Redirect to the specific admin page
+    window.location.href = "admin.html"; // Redirect to admin page if already logged in
 }
 
 const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', "Enter"];
@@ -35,29 +34,18 @@ window.addEventListener("click", (event) => {
 });
 
 // Handle login
-async function handleLogin(event) {
+function handleLogin(event) {
     event.preventDefault(); // Prevent form submission
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Send login request to PHP script
-    const response = await fetch('login.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
+    // Check credentials
+    if (username === "dyamuh" && password === "ilovecuks") {
         sessionStorage.setItem("loggedIn", "true"); // Set logged in status
-        sessionStorage.setItem("adminPage", result.adminPage); // Store admin page
-        window.location.href = `${result.adminPage}.html`; // Redirect to specific admin page
+        window.location.href = "admin.html"; // Redirect to admin page
     } else {
-        alert("Invalid username or password!");
+        alert("INCORRECT"); // Show error message
     }
 }
 
