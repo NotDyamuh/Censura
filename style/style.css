@@ -11,13 +11,12 @@
 * {
 	line-height: calc(4px + 2ex);
 	box-sizing: border-box;
-	background-color: black;
 }
 
 :root {
 	scroll-behavior: smooth;
 	background-image: linear-gradient(#070b34 0%, #141852 35%, #2b2f77 61%, #473475 73%, #6b4984 87%, #855988 calc(100% - 0rem), #141852 calc(100% - 1.5rem), #070b34);
-	background-color: #070b34;
+	background-color: black;
 	color: white;
 	font-family: space-grotesk, system-ui, sans-serif;
 	font-size: calc(15px + 0.390625vw * 1.75);
