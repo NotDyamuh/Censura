@@ -11,10 +11,6 @@
 * {
 	line-height: calc(4px + 2ex);
 	box-sizing: border-box;
-    	height: 100%;
-    	margin: 0;
-}
-
 }
 
 :root {
@@ -173,9 +169,7 @@ a[href="#_"] {
 	backdrop-filter: blur(4px);
 }
 body:has(.people a:target) {
-    overflow: auto; /* Change to auto or remove this line */
-}
-
+	overflow: hidden;
 }
 
 th,
@@ -285,28 +279,3 @@ footer p {
     background-color: black; /* Optional: button color */
     color: white; /* Optional: button text color */
 }
-
-body {
-            margin: 0;
-    overflow: auto; /* Change to auto or remove this line */
-}
-
-            background-color: black; /* Pitch black background */
-        }
-
-        #rainCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        #customCursor {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            border: 2px solid white;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 2; /* Above the canvas */
-        }
