@@ -15,7 +15,7 @@
 
 :root {
 	scroll-behavior: smooth;
-	background-color: black;
+	background-color: #2e1a47;
 	color: white;
 	font-family: space-grotesk, system-ui, sans-serif;
 	font-size: calc(15px + 0.390625vw * 1.75);
