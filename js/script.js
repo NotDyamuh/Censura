@@ -35,24 +35,27 @@ window.addEventListener("click", (event) => {
 });
 
 // Handle login
-function handleLogin(event) {
+async function handleLogin(event) {
     event.preventDefault(); // Prevent form submission
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Simple authentication check
-    const adminData = {
-        "admin1": { password: "password1", page: "admin1" },
-        "admin2": { password: "password2", page: "admin2" },
-        "admin3": { password: "password3", page: "admin3" },
-    };
+    // Send login request to PHP script
+    const response = await fetch('login.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+    });
 
-    // Validate username and password
-    if (adminData[username] && adminData[username].password === password) {
+    const result = await response.json();
+
+    if (result.success) {
         sessionStorage.setItem("loggedIn", "true"); // Set logged in status
-        sessionStorage.setItem("adminPage", adminData[username].page); // Store admin page
-        window.location.href = `${adminData[username].page}.html`; // Redirect to specific admin page
+        sessionStorage.setItem("adminPage", result.adminPage); // Store admin page
+        window.location.href = `${result.adminPage}.html`; // Redirect to specific admin page
     } else {
         alert("Invalid username or password!");
     }
