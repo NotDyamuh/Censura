@@ -279,3 +279,26 @@ footer p {
     background-color: black; /* Optional: button color */
     color: white; /* Optional: button text color */
 }
+
+body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black; /* Pitch black background */
+        }
+
+        #rainCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #customCursor {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 2px solid white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2; /* Above the canvas */
+        }
