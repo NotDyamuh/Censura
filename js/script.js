@@ -12,18 +12,32 @@ window.addEventListener("hashchange", (e) => {
 const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', "Enter"];
 let current = 0;
 const clocks = document.getElementById("clocks");
+const loginModal = document.getElementById("login-modal");
+const closeButton = document.querySelector(".close-button");
 
 document.addEventListener('keydown', (e) => {
   if (e.key === pattern[current]) {
     current++;
     if (current === pattern.length) {
-      // Redirect to secret login page
-      window.location.href = window.location.href.split('#')[0] + '#login'; // Appends #login to the current URL
+      // Show the login modal
+      loginModal.classList.remove("hidden");
       current = 0;
     }
   } else {
     current = 0;
   }
+});
+
+// Close the modal when the close button is clicked
+closeButton.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+});
+
+// Close the modal when clicking outside of the modal
+window.addEventListener("click", (event) => {
+    if (event.target === loginModal) {
+        loginModal.classList.add("hidden");
+    }
 });
 
 const canvas = document.getElementById("bg");
@@ -67,14 +81,4 @@ app.ticker.add(() => {
 		star.sprite.x = star.x * app.screen.width;
 		star.sprite.y = mod(star.y * app.screen.height - smoothY * 2.77 * star.sprite.scale.y, app.screen.height + starSize * window.devicePixelRatio);
 	});
-});
-
-// Handle login section visibility
-window.addEventListener("hashchange", () => {
-    const loginSection = document.getElementById("login");
-    if (window.location.hash === "#login") {
-        loginSection.classList.remove("hidden");
-    } else {
-        loginSection.classList.add("hidden");
-    }
 });
