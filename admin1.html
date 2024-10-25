@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin 1 Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin 1 Dashboard</h1>
+    </header>
+    <main>
+        <h2>Welcome, Admin 1!</h2>
+        <p>This is the content specific to Admin 1.</p>
+        <button id="logout-button">Logout</button>
+    </main>
+    <script>
+        // Check if user is logged in
+        if (!sessionStorage.getItem("loggedIn")) {
+            window.location.href = "index.html"; // Redirect to login page if not logged in
+        }
 
+        // Logout functionality
+        document.getElementById("logout-button").addEventListener("click", () => {
+            sessionStorage.removeItem("loggedIn"); // Clear login status
+            sessionStorage.removeItem("adminPage"); // Clear admin page
+            window.location.href = "index.html"; // Redirect to login page
+        });
+    </script>
+</body>
+</html>
