@@ -286,6 +286,9 @@ footer p {
 .hidden {
     display: none;
 }
+.hidden {
+    display: none;
+}
 .modal {
     position: fixed;
     z-index: 1000;
@@ -301,4 +304,12 @@ footer p {
     padding: 20px;
     border: 1px solid #888;
     width: 300px;
+}
+.modal-content h2,
+.modal-content label {
+    color: black; /* Change text color to black */
+}
+.modal-content button {
+    background-color: black; /* Optional: button color */
+    color: white; /* Optional: button text color */
 }
