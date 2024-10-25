@@ -48,6 +48,7 @@ function handleLogin(event) {
         "admin3": { password: "password3", page: "admin3" },
     };
 
+    // Validate username and password
     if (adminData[username] && adminData[username].password === password) {
         sessionStorage.setItem("loggedIn", "true"); // Set logged in status
         sessionStorage.setItem("adminPage", adminData[username].page); // Store admin page
