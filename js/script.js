@@ -42,7 +42,10 @@ function handleLogin(event) {
     const password = document.getElementById("password").value;
 
     // Check credentials
-    if (username === "dyamuh" && password === "ilovecuks") {
+    if (
+        (username === "dyamuh" && password === "ilovecuks") ||
+        (username === "oliver" && password === "Oliver123")
+    ) {
         sessionStorage.setItem("loggedIn", "true"); // Set logged in status
         window.location.href = "admin.html"; // Redirect to admin page
     } else {
