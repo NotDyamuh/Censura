@@ -3,7 +3,8 @@ import * as PIXI from "https://esm.sh/pixi.js@7.2.4?bundle-deps";
 
 // Check if user is already logged in
 if (sessionStorage.getItem("loggedIn")) {
-    window.location.href = "main.html"; // Redirect to main page if already logged in
+    const adminPage = sessionStorage.getItem("adminPage");
+    window.location.href = `${adminPage}.html`; // Redirect to the specific admin page
 }
 
 window.addEventListener("hashchange", (e) => {
@@ -51,9 +52,16 @@ function handleLogin(event) {
     const password = document.getElementById("password").value;
 
     // Simple authentication check
-    if (username === "admin" && password === "password") {
+    const adminData = {
+        "admin1": { password: "password1", page: "admin1" },
+        "admin2": { password: "password2", page: "admin2" },
+        "admin3": { password: "password3", page: "admin3" },
+    };
+
+    if (adminData[username] && adminData[username].password === password) {
         sessionStorage.setItem("loggedIn", "true"); // Set logged in status
-        window.location.href = "admin.html"; // Redirect to admin page
+        sessionStorage.setItem("adminPage", adminData[username].page); // Store admin page
+        window.location.href = `${adminData[username].page}.html`; // Redirect to specific admin page
     } else {
         alert("Invalid username or password!");
     }
