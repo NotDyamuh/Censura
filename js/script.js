@@ -1,12 +1,16 @@
 // REMEMBER TO UPDATE min.js BEFORE COMMITTING! THIS FILE IS NOT LOADED IN PRODUCTION!
 import * as PIXI from "https://esm.sh/pixi.js@7.2.4?bundle-deps";
 
-// me when i nitpick
+// Check if user is already logged in
+if (sessionStorage.getItem("loggedIn")) {
+    window.location.href = "main.html"; // Redirect to main page if already logged in
+}
+
 window.addEventListener("hashchange", (e) => {
-	const url = new URL(e.newURL);
-	if (url.hash == "#_") {
-		history.pushState(null, null, url.pathname + url.search);
-	}
+    const url = new URL(e.newURL);
+    if (url.hash == "#_") {
+        history.pushState(null, null, url.pathname + url.search);
+    }
 });
 
 const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', "Enter"];
@@ -16,16 +20,15 @@ const loginModal = document.getElementById("login-modal");
 const closeButton = document.querySelector(".close-button");
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === pattern[current]) {
-    current++;
-    if (current === pattern.length) {
-      // Show the login modal
-      loginModal.classList.remove("hidden");
-      current = 0;
+    if (e.key === pattern[current]) {
+        current++;
+        if (current === pattern.length) {
+            loginModal.classList.remove("hidden");
+            current = 0;
+        }
+    } else {
+        current = 0;
     }
-  } else {
-    current = 0;
-  }
 });
 
 // Close the modal when the close button is clicked
@@ -40,12 +43,28 @@ window.addEventListener("click", (event) => {
     }
 });
 
+// Handle login
+function handleLogin(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Simple authentication check
+    if (username === "admin" && password === "password") {
+        sessionStorage.setItem("loggedIn", "true"); // Set logged in status
+        window.location.href = "admin.html"; // Redirect to admin page
+    } else {
+        alert("Invalid username or password!");
+    }
+}
+
 const canvas = document.getElementById("bg");
 const app = new PIXI.Application({
-	view: canvas,
-	resizeTo: canvas,
-	backgroundAlpha: 0,
-	antialias: true,
+    view: canvas,
+    resizeTo: canvas,
+    backgroundAlpha: 0,
+    antialias: true,
 });
 app.stage.filters = [new PIXI.BlurFilter(2, undefined, window.devicePixelRatio)];
 
@@ -54,31 +73,31 @@ const starNum = Math.sqrt(Math.pow(app.screen.height, 2) + Math.pow(app.screen.h
 
 const starTexture = app.renderer.generateTexture(new PIXI.Graphics().beginFill(0xffffff).drawCircle(0, 0, starSize).endFill());
 const stars = Array.from({ length: starNum }, () => {
-	const star = {
-		sprite: new PIXI.Sprite(starTexture),
-		x: Math.random(),
-		y: Math.random(),
-	};
-	star.sprite.anchor.set(0.5, 1);
-	star.sprite.scale.set(Math.random());
-	app.stage.addChild(star.sprite);
-	star.sprite.x = Math.random() * app.screen.width;
-	star.sprite.y = Math.random() * app.screen.height;
-	return star;
+    const star = {
+        sprite: new PIXI.Sprite(starTexture),
+        x: Math.random(),
+        y: Math.random(),
+    };
+    star.sprite.anchor.set(0.5, 1);
+    star.sprite.scale.set(Math.random());
+    app.stage.addChild(star.sprite);
+    star.sprite.x = Math.random() * app.screen.width;
+    star.sprite.y = Math.random() * app.screen.height;
+    return star;
 });
 document.getElementById("bg").classList.add("show");
 
 function mod(n, m) {
-	return ((n % m) + m) % m;
+    return ((n % m) + m) % m;
 }
 
 let smoothY = document.documentElement.scrollTop;
 app.ticker.add(() => {
-	smoothY += 0.15 * (document.documentElement.scrollTop - smoothY);
-	const scrollFrac = document.documentElement.scrollTop / document.body.scrollHeight;
-	app.stage.alpha = 0.7 - scrollFrac * 1.2;
-	stars.forEach((star) => {
-		star.sprite.x = star.x * app.screen.width;
-		star.sprite.y = mod(star.y * app.screen.height - smoothY * 2.77 * star.sprite.scale.y, app.screen.height + starSize * window.devicePixelRatio);
-	});
+    smoothY += 0.15 * (document.documentElement.scrollTop - smoothY);
+    const scrollFrac = document.documentElement.scrollTop / document.body.scrollHeight;
+    app.stage.alpha = 0.7 - scrollFrac * 1.2;
+    stars.forEach((star) => {
+        star.sprite.x = star.x * app.screen.width;
+        star.sprite.y = mod(star.y * app.screen.height - smoothY * 2.77 * star.sprite.scale.y, app.screen.height + starSize * window.devicePixelRatio);
+    });
 });
