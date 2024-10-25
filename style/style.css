@@ -11,6 +11,10 @@
 * {
 	line-height: calc(4px + 2ex);
 	box-sizing: border-box;
+    	height: 100%;
+    	margin: 0;
+}
+
 }
 
 :root {
@@ -169,7 +173,9 @@ a[href="#_"] {
 	backdrop-filter: blur(4px);
 }
 body:has(.people a:target) {
-	overflow: hidden;
+    overflow: auto; /* Change to auto or remove this line */
+}
+
 }
 
 th,
@@ -282,7 +288,9 @@ footer p {
 
 body {
             margin: 0;
-            overflow: hidden;
+    overflow: auto; /* Change to auto or remove this line */
+}
+
             background-color: black; /* Pitch black background */
         }
 
