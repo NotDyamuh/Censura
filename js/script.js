@@ -35,7 +35,7 @@ window.addEventListener("click", (event) => {
 
 // Handle login
 function handleLogin(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // Prevent default form submission
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
