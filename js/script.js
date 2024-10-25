@@ -53,13 +53,17 @@ function handleLogin(event) {
     }
 }
 
-
-const customCursor = document.getElementById('customCursor');
 const rainCanvas = document.getElementById('rainCanvas');
 const ctx = rainCanvas.getContext('2d');
-rainCanvas.width = window.innerWidth;
-rainCanvas.height = window.innerHeight;
 let raindrops = [];
+
+// Resize canvas on window resize
+function resizeCanvas() {
+    rainCanvas.width = window.innerWidth;
+    rainCanvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
 // Create raindrops
 for (let i = 0; i < 100; i++) {
@@ -91,17 +95,6 @@ function drawRain() {
 
 // Draw rain at a slower interval
 setInterval(drawRain, 33); // About 30 frames per second
-
-// Custom cursor movement
-document.addEventListener('mousemove', (e) => {
-    customCursor.style.transform = `translate(${e.clientX - 12.5}px, ${e.clientY - 12.5}px)`; // Center the cursor
-});
-
-// Resize canvas on window resize
-window.addEventListener('resize', () => {
-    rainCanvas.width = window.innerWidth;
-    rainCanvas.height = window.innerHeight;
-});
 
 // Redirect to home page if trying to access admin.html without logging in
 if (window.location.pathname === "/admin.html" && !sessionStorage.getItem("loggedIn")) {
