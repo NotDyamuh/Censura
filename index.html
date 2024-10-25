@@ -154,9 +154,9 @@
 
         // Create raindrop
         class Raindrop {
-            constructor(x, y, length, speed) {
+            constructor(x, length, speed) {
                 this.x = x;
-                this.y = y;
+                this.y = Math.random() * -canvas.height; // Start from above the canvas
                 this.length = length;
                 this.speed = speed;
             }
@@ -164,7 +164,7 @@
             fall() {
                 this.y += this.speed;
                 if (this.y > canvas.height) {
-                    this.y = Math.random() * -20; // Start above the canvas
+                    this.y = Math.random() * -20; // Reset to just above the canvas
                     this.x = Math.random() * canvas.width; // Random x position
                 }
             }
@@ -185,7 +185,7 @@
                 let x = Math.random() * canvas.width; // Random x position
                 let length = Math.random() * 20 + 10;
                 let speed = Math.random() * 5 + 2;
-                drops.push(new Raindrop(x, Math.random() * -100, length, speed)); // Start above the canvas
+                drops.push(new Raindrop(x, length, speed)); // Start each raindrop at a random position above the canvas
             }
         }
 
