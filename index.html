@@ -74,20 +74,21 @@
 <div id="login-modal" class="modal hidden">
     <div class="modal-content">
         <span class="close-button">&times;</span>
-        <h2>Login</h2>
-        <form id="login-form">
+        <h2 style="color: black;">Login</h2>
+        <form id="login-form" onsubmit="return handleLogin(event);">
             <div>
-                <label for="username">Username:</label>
+                <label for="username" style="color: black;">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div>
-                <label for="password">Password:</label>
+                <label for="password" style="color: black;">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">Login</button>
         </form>
     </div>
 </div>
+
 
 	</body>
 </html>
