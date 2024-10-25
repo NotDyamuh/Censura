@@ -278,3 +278,7 @@ footer p {
     background-color: black; /* Optional: button color */
     color: white; /* Optional: button text color */
 }
+
+#something {
+    display: none; /* Completely hides the element */
+}
