@@ -68,3 +68,13 @@ app.ticker.add(() => {
 		star.sprite.y = mod(star.y * app.screen.height - smoothY * 2.77 * star.sprite.scale.y, app.screen.height + starSize * window.devicePixelRatio);
 	});
 });
+
+// Handle login section visibility
+window.addEventListener("hashchange", () => {
+    const loginSection = document.getElementById("login");
+    if (window.location.hash === "#login") {
+        loginSection.classList.remove("hidden");
+    } else {
+        loginSection.classList.add("hidden");
+    }
+});
