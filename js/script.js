@@ -48,5 +48,3 @@ function handleLogin(event) {
         alert("INCORRECT"); // Show error message
     }
 }
-
-// Additional PIXI code can go here...
