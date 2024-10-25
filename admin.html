@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
-    <header>
-        <h1>Admin Page</h1>
-    </header>
-    <main>
-        <h2>Welcome, Admin!</h2>
-        <p>This is your admin area.</p>
-        <button id="logout-button">Logout</button>
-    </main>
-    <script>
-        // Check if user is logged in
-        if (!sessionStorage.getItem("loggedIn")) {
-            window.location.href = "index.html"; // Redirect to main page if not logged in
-        }
+    <h1>Admin Panel</h1>
+    <form id="update-form">
+        <label for="file-path">File Path:</label>
+        <input type="text" id="file-path" placeholder="e.g., index.html" required>
+        
+        <label for="file-content">File Content:</label>
+        <textarea id="file-content" placeholder="Write your code changes here..." required></textarea>
 
-        // Logout functionality
-        document.getElementById("logout-button").addEventListener("click", () => {
-            sessionStorage.removeItem("loggedIn"); // Clear login status
-            window.location.href = "index.html"; // Redirect to main page
-        });
-    </script>
+        <button type="submit">Update File</button>
+    </form>
+    <script src="/js/admin.js" type="module"></script>
 </body>
 </html>
