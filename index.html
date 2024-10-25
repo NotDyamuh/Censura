@@ -33,13 +33,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.5;
-            pointer-events: none;
+            opacity: 0.5; /* Reduced opacity for a lighter effect */
+            pointer-events: none; /* Allows clicks to pass through */
             z-index: -1;
             transition: opacity 1s ease;
         }
 
-        h1, h2 {
+        h1 {
             text-align: center;
             margin-top: 20px;
         }
@@ -48,37 +48,6 @@
             text-align: center;
             max-width: 600px;
             margin: 20px auto;
-        }
-
-        .members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px;
-        }
-
-        .member {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            margin: 10px;
-            padding: 15px;
-            text-align: center;
-            width: 200px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #483475;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .footer {
-            text-align: center;
-            margin: 20px 0;
         }
     </style>
 </head>
@@ -174,7 +143,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
     <script>
         const canvas = document.getElementById('bg');
         const ctx = canvas.getContext('2d');
@@ -196,8 +164,8 @@
             fall() {
                 this.y += this.speed;
                 if (this.y > canvas.height) {
-                    this.y = Math.random() * -20;
-                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * -20; // Start above the canvas
+                    this.x = Math.random() * canvas.width; // Random x position
                 }
             }
 
@@ -214,10 +182,10 @@
         // Generate raindrops
         function createDrops() {
             for (let i = 0; i < 100; i++) {
-                let x = Math.random() * canvas.width;
+                let x = Math.random() * canvas.width; // Random x position
                 let length = Math.random() * 20 + 10;
                 let speed = Math.random() * 5 + 2;
-                drops.push(new Raindrop(x, Math.random() * canvas.height, length, speed));
+                drops.push(new Raindrop(x, Math.random() * -100, length, speed)); // Start above the canvas
             }
         }
 
