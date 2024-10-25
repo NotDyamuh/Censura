@@ -5,7 +5,6 @@ if (sessionStorage.getItem("loggedIn")) {
 
 const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', "Enter"];
 let current = 0;
-const clocks = document.getElementById("clocks");
 const loginModal = document.getElementById("login-modal");
 const closeButton = document.querySelector(".close-button");
 
@@ -34,6 +33,8 @@ window.addEventListener("click", (event) => {
 });
 
 // Handle login
+document.getElementById("login-form").addEventListener("submit", handleLogin);
+
 function handleLogin(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -47,4 +48,9 @@ function handleLogin(event) {
     } else {
         alert("INCORRECT"); // Show error message
     }
+}
+
+// Redirect to home page if trying to access admin.html without logging in
+if (window.location.pathname === "/admin.html" && !sessionStorage.getItem("loggedIn")) {
+    window.location.href = "/index.html"; // Change to your home page URL
 }
