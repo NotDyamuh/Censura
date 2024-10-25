@@ -1,214 +1,134 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="An organization of developers dedicated to writing free and open source software for everyone" />
-    <meta name="darkreader-lock" />
-    <meta name="msapplication-TileColor" content="#483475" />
-    <meta name="theme-color" content="#070b34" />
-    <title>Censura</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?k" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?k" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?k" />
-    <link rel="manifest" href="/site.webmanifest?k" />
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg?k" color="#483475" />
-    <link rel="shortcut icon" href="/favicon.ico?" />
-    <link rel="preload" href="/style/SpaceGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin />
-    <script src="/js/script.js" type="module"></script>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: space-grotesk, system-ui, sans-serif;
-            margin: 0;
-            overflow: auto;
-            padding-top: 3rem;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5; /* Reduced opacity for a lighter effect */
-            pointer-events: none; /* Allows clicks to pass through */
-            z-index: -1;
-            transition: opacity 1s ease;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="An organization of developers dedicated to writing free and open source software for everyone" />
+		<meta name="darkreader-lock" />
+		<meta name="msapplication-TileColor" content="#483475" />
+		<meta name="theme-color" content="#070b34" />
+		<title>Censura</title>
+		<link rel="stylesheet" href="/style/style.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?k" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?k" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?k" />
+		<link rel="manifest" href="/site.webmanifest?k" />
+		<link rel="mask-icon" href="/icons/safari-pinned-tab.svg?k" color="#483475" />
+		<link rel="shortcut icon" href="/favicon.ico?" />
+		<link rel="preload" href="/style/SpaceGrotesk-Medium.woff2" as="font" type="font/woff2" crossorigin />
+		<script src="/js/script.js" type="module"></script>
+	</head>
+	<body>
+		<canvas id="bg"></canvas>
+		<img src="/assets/censura.svg" alt="Censura logo" width="128" height="128" />
+		<h1>Censura</h1>
+		<p>An organization with a few people dedicated to getting rid of school technology restrictions.</p>
+		<h2>Projects</h2>
+		<div class="projects">
+			<a href="https://sh1mmer.dyamuh.com/" target="_blank" class="glassy">
+				<h3>SH1MMER</h3>
+				A recovery-based enrollment jailbreak targeting enrolled ChromeOS devices
+			</a>
+		</div>
 
-        #bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5; /* Reduced opacity for a lighter effect */
-            pointer-events: none; /* Allows clicks to pass through */
-            z-index: -1;
-            transition: opacity 1s ease;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        p {
-            text-align: center;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-    </style>
-</head>
-<body>
-    <canvas id="bg"></canvas>
-    <img src="/assets/censura.svg" alt="Censura logo" width="128" height="128" />
-    <h1>Censura</h1>
-    <p>An organization with a few people dedicated to getting rid of school technology restrictions.</p>
-    <h2>Projects</h2>
-    <div class="projects">
-        <a href="https://sh1mmer.dyamuh.com/" target="_blank" class="glassy">
-            <h3>SH1MMER</h3>
-            A recovery-based enrollment jailbreak targeting enrolled ChromeOS devices
-        </a>
+				<h2>Coming Soon</h2>
+		<div class="projects">
+			<a href="#" target="_blank" class="glassy">
+				<h3>Crisseler</h3>
+				A USB tool to install Ubuntu on your school enrolled chromebook
+			</a>
+		</div>
+		
+		<h2 id="members">Members</h2>
+		<div class="people">
+			<a class="glassy" href="#raff" id="raff">
+				<img src="/assets/pfps/muzan.jpeg" alt="Dyamuh's profile picture" />
+				Dyamuh
+			</a>
+			<article>
+				<h2>Dyamuh</h2>
+				<p>Founder of Censura<br />i started not caring about life a long time ago...</p>
+				<table>
+					<tr>
+						<th>github</th>
+						<td><a href="https://github.com/NotDyamuh/" target="_blank">NotDyamuh</a></td>
+					</tr>
+					<tr>
+						<th>discord</th>
+						<td>@NotDyamuh</td>
+					</tr>
+				</table>
+			</article>
+			<a class="glassy" href="#vys" id="vys">
+				<img src="/assets/pfps/oliver.jpeg" alt="SecterSion's profile picture" />
+				SecterSion
+			</a>
+			<article>
+				<h2>SecterSion</h2>
+				<p>Co-Founder of Censura<br />interested in fire.</p>
+				<table>
+					<tr>
+						<th>github</th>
+						<td><a href="https://github.com/404/" target="_blank">SecterSion</a></td>
+					</tr>
+					<tr>
+				<!--		<th>discord</th>
+						<td>@NotDyamuh</td>    -->
+					</tr>
+				</table>
+			</article>
+			<a class="glassy" href="#mt" id="mt">
+				<img src="/assets/pfps/zt.jpeg" alt="Zarcotech's profile picture" />
+				Zarcotech
+			</a>
+			<article>
+				<h2>Zarcotech</h2>
+				<p>Worker in Censura<br />meh.</p>
+				<table>
+					<tr>
+						<th>github</th>
+						<td><a href="https://github.com/Zarcotech/" target="_blank">Zarcotech</a></td>
+					</tr>
+					<tr>
+						<th>discord</th>
+						<td>@Zarcotech</td>
+					</tr>
+				</table>
+			</article>
+			<a href="#_"></a>
+		</div>
+		<footer class="glassy">
+		<!--	<div>
+				<p>Legal request? Contact <a href="mailto:legal@mercurywork.shop">legal@mercurywork.shop</a></p>
+				<p>Found a security issue? Contact <a href="mailto:security@mercurywork.shop">security@mercurywork.shop</a></p>
+				<p>Need help or just want to contact the team? Email us at <a href="mailto:support@mercurywork.shop">support@mercurywork.shop</a></p>
+			</div>
+		-->
+		</footer>
+		<video id="clocks" class="glassy" disablepictureinpicture disableremoteplayback>
+			<source src="/assets/clocks.mp4" type="video/mp4" preload="auto" />
+		</video>
+		<svg xmlns="http://www.w3.org/2000/svg" height="0.5em" viewBox="0 0 1021.2 71.6">
+			<path
+				fill="#fff4"
+				d="M808.7 70.7H773v-9.6h9.4V10.3H773V.7h35.5q6.3 0 11 2.15a18.3 18.3 0 0 1 4.859 3.188 16.4 16.4 0 0 1 2.491 2.912q2.65 3.95 2.65 9.35v1a21 21 0 0 1-.252 3.353q-.29 1.792-.913 3.269a11 11 0 0 1-.635 1.278q-1.8 3.1-4.35 4.8t-4.85 2.4V36a13 13 0 0 1 2.079.745q1.014.456 2.087 1.108a25 25 0 0 1 .784.497q2.65 1.75 4.5 4.85 1.53 2.564 1.795 6.427a25 25 0 0 1 .055 1.673v1a20.8 20.8 0 0 1-.535 4.829A15.8 15.8 0 0 1 827.1 62.2q-2.7 4.1-7.45 6.3a23.4 23.4 0 0 1-6.46 1.884 31 31 0 0 1-4.49.316m-776.4 0h-10V18.9l.7-4.4-1.5-.5-2.4 3.7L6.6 30.3 0 23.7 23.7 0h7.2l23.7 23.7-6.6 6.6-12.5-12.6-2.4-3.7-1.5.5.7 4.4zm87.5 0h-10V18.9l.7-4.4-1.5-.5-2.4 3.7-12.5 12.6-6.6-6.6L111.2 0h7.2l23.7 23.7-6.6 6.6L123 17.7l-2.4-3.7-1.5.5.7 4.4zm86.1.7h-7.2L175 47.7l6.6-6.6 12.5 12.6 2.4 3.7 1.5-.5-.7-4.4V.7h10v51.8l-.7 4.4 1.5.5 2.4-3.7L223 41.1l6.6 6.6zm87.5 0h-7.2l-23.7-23.7 6.6-6.6 12.5 12.6 2.4 3.7 1.5-.5-.7-4.4V.7h10v51.8l-.7 4.4 1.5.5 2.4-3.7 12.5-12.6 6.6 6.6zm87.1-6.3-6.6 6.5-23.2-23.1v-6.8l23.2-23.2 6.6 6.6-12.2 12.1-3.7 2.4.5 1.5 4.4-.7h51.8v9.4h-51.8l-4.4-.7-.5 1.5 3.7 2.4zm146.9-16.6-23.2 23.1-6.6-6.5L509.8 53l3.7-2.4-.5-1.5-4.4.7h-51.8v-9.4h51.8l4.4.7.5-1.5-3.7-2.4-12.2-12.1 6.6-6.6 23.2 23.2zm64.1 16.6-6.6 6.5-23.2-23.1v-6.8l23.2-23.2 6.6 6.6-12.2 12.1-3.7 2.4.5 1.5 4.4-.7h51.8v9.4h-51.8l-4.4-.7-.5 1.5 3.7 2.4zm146.9-16.6-23.2 23.1-6.6-6.5L720.8 53l3.7-2.4-.5-1.5-4.4.7h-51.8v-9.4h51.8l4.4.7.5-1.5-3.7-2.4-12.2-12.1 6.6-6.6 23.2 23.2zm133.7 22.2h-11.2l20-70h19l19.9 70h-11.1l-4.6-16.5h-27.4zm17.5-63.3-10.2 36.8h22L891.2 7.4zm-96.3 33v20.5h14.1a18 18 0 0 0 3.423-.304q1.981-.381 3.538-1.242A9.7 9.7 0 0 0 815.9 58.3q3.1-2.6 3.1-7.2v-.9a11.1 11.1 0 0 0-.411-3.108A8.3 8.3 0 0 0 815.95 43q-3.05-2.6-8.55-2.6zm0-29.9v20h14.1a16.6 16.6 0 0 0 3.407-.329q2.237-.468 3.952-1.601a10 10 0 0 0 .841-.62 8.33 8.33 0 0 0 3.068-6.075A12 12 0 0 0 818.7 21v-1q0-4.4-3.05-6.95a10.4 10.4 0 0 0-3.979-2.026q-1.915-.524-4.271-.524zm187.1 54.6-6.6 6.5-23.2-23.1v-6.8l23.2-23.2 6.6 6.6-12.2 12.1-3.7 2.4.5 1.5 4.4-.7h42.4V18.5h9.4v31.3h-51.8l-4.4-.7-.5 1.5 3.7 2.4z"
+			/>
+		</svg>
+	<div id="login-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
     </div>
+</div>
 
-    <h2>Coming Soon</h2>
-    <div class="projects">
-        <a target="_blank" class="glassy">
-            <h3>Crisseler</h3>
-            A USB tool to install Ubuntu on your school enrolled chromebook
-        </a>
-    </div>
 
-    <h2 id="members">Members</h2>
-    <div class="people">
-        <a class="glassy" href="#raff" id="raff">
-            <img src="/assets/pfps/muzan.jpeg" alt="Dyamuh's profile picture" />
-            Dyamuh
-        </a>
-        <article>
-            <h2>Dyamuh</h2>
-            <p>Founder of Censura<br />i started not caring about life a long time ago...</p>
-            <table>
-                <tr>
-                    <th>github</th>
-                    <td><a href="https://github.com/NotDyamuh/" target="_blank">NotDyamuh</a></td>
-                </tr>
-                <tr>
-                    <th>discord</th>
-                    <td>@NotDyamuh</td>
-                </tr>
-            </table>
-        </article>
-        <a class="glassy" href="#vys" id="vys">
-            <img src="/assets/pfps/oliver.jpeg" alt="SecterSion's profile picture" />
-            SecterSion
-        </a>
-        <article>
-            <h2>SecterSion</h2>
-            <p>Co-Founder of Censura<br />interested in fire.</p>
-            <table>
-                <tr>
-                    <th>github</th>
-                    <td><a href="https://github.com/404/" target="_blank">SecterSion</a></td>
-                </tr>
-            </table>
-        </article>
-        <a class="glassy" href="#mt" id="mt">
-            <img src="/assets/pfps/zt.jpeg" alt="Zarcotech's profile picture" />
-            Zarcotech
-        </a>
-        <article>
-            <h2>Zarcotech</h2>
-            <p>Worker in Censura<br />meh.</p>
-            <table>
-                <tr>
-                    <th>github</th>
-                    <td><a href="https://github.com/Zarcotech/" target="_blank">Zarcotech</a></td>
-                </tr>
-                <tr>
-                    <th>discord</th>
-                    <td>@Zarcotech</td>
-                </tr>
-            </table>
-        </article>
-    </div>
-    <footer class="glassy"></footer>
-    <video id="clocks" class="glassy" disablepictureinpicture disableremoteplayback>
-        <source src="/assets/clocks.mp4" type="video/mp4" preload="auto" />
-    </video>
-    <div id="login-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        const canvas = document.getElementById('bg');
-        const ctx = canvas.getContext('2d');
-        let drops = [];
-
-        // Set canvas size
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Create raindrop
-        class Raindrop {
-            constructor(x, length, speed) {
-                this.x = x;
-                this.y = Math.random() * -canvas.height; // Start from above the canvas
-                this.length = length;
-                this.speed = speed;
-            }
-
-            fall() {
-                this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.y = Math.random() * -20; // Reset to just above the canvas
-                    this.x = Math.random() * canvas.width; // Random x position
-                }
-            }
-
-            draw() {
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(this.x, this.y);
-                ctx.lineTo(this.x, this.y + this.length);
-                ctx.stroke();
-            }
-        }
-
-        // Generate raindrops
-        function createDrops() {
-            for (let i = 0; i < 100; i++) {
-                let x = Math.random() * canvas.width; // Random x position
-                let length = Math.random() * 20 + 10;
-                let speed = Math.random() * 5 + 2;
-                drops.push(new Raindrop(x, length, speed)); // Start each raindrop at a random position above the canvas
-            }
-        }
-
-        // Animate raindrops
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let drop of drops) {
-                drop.fall();
-                drop.draw();
-            }
-            requestAnimationFrame(animate);
-        }
-
-        createDrops();
-        animate();
-    </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
